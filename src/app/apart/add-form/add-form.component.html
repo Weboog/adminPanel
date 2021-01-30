@@ -1,0 +1,49 @@
+<div class="apart_container">
+    <h1>add new appart</h1>
+    <div class="form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <!-- <div class="aparts" *ngFor="let apart of aparts">
+              <p>
+                {{apart.address}}
+              </p>
+            </div> -->
+            <div class="action">
+                <label for="louer">Louer</label>
+                <input type="radio" name="action" id="louer" value="1" formControlName="action" checked (change)="changeMode()">
+                <label for="vendre">Vendre</label>
+                <input type="radio" name="action" id="vendre" value="2" formControlName="action" (change)="changeMode()">
+            </div>
+            <select name="property" formControlName="property">
+                <!-- <option value="0">type du bien</option> -->
+                <option value="{{ property.id }}" *ngFor="let property of properties">
+                    {{ property.name }}
+                </option>
+            </select>
+            <select name="city" formControlName="city">
+                <!-- <option value="0">ville ou région</option> -->
+                <option value="{{ city.id }}" *ngFor="let city of cities">
+                    {{ city.name }}
+                </option>
+            </select>
+            <input type="text" name="price" formControlName="price" placeholder="price">
+            <select name="period" formControlName="period" *ngIf="rentalMode">
+                <!-- <option value="0">type du bien</option> -->
+                <option value="{{ period.id }}" *ngFor="let period of periods">
+                    {{ period.name }}
+                </option>
+            </select>
+            <input type="text" name="surface" formControlName="surface" placeholder="surface">
+            <input type="text" name="pieces" formControlName="pieces" placeholder="pieces">
+            <input type="text" name="rooms" formControlName="rooms" placeholder="rooms">
+            <input type="text" name="floors" formControlName="floors" placeholder="floors">
+            <input type="hidden" name="location" formControlName="location" placeholder="location">
+            <textarea name="address" formControlName="address" placeholder="address"></textarea>
+            <textarea name="description" formControlName="description" placeholder="description"></textarea>
+            <textarea type="text" name="external" formControlName="external" placeholder="external"></textarea>
+            <textarea type="text" name="internal" formControlName="internal" placeholder="internal"></textarea>
+            <textarea type="text" name="conditions" formControlName="conditions" placeholder="conditions"></textarea>
+            <button type="reset">reset</button>
+            <button type="submit">add</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="images_container">
+    <form [formGroup]="imageForm" (ngSubmit)="onSubmit()">
+        <div class="image_sample" *ngFor="let file of files; index as i">
+            <p>{{file.name}}</p><span id="percentage-{{i}}"></span>
+            <progress id="progress-{{i}}" value="0" max="0"></progress>
+        </div>
+        <input type="file" id="gallery" name="gallery" multiple (change)="onfiles($event)" formControlName="gallery">
+        <hr>
+        <div class="controls">
+            <button type="reset" (click)="onReset()">reset</button>
+            <button [disabled]="!files" type="submit">enregistrer</button>
+        </div>
+    </form>
+</div>
