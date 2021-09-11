@@ -1,3 +1,3 @@
 export class GlobalConstants {
-  public static apiURL = 'http://boogstell-api.atwebpages.com/';
+  public static apiURL = 'https://db-services.locatia.xyz';
 }

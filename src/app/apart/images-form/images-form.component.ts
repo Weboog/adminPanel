@@ -53,9 +53,9 @@ export class ImagesFormComponent implements OnInit {
         if (request.readyState === request.DONE) {
           j++;
           if (j === this.files.length) {
-            this.router.navigate(['add'], {relativeTo: this.route.parent}).then( () => {
-                localStorage.removeItem('apartId');
-            });
+            // this.router.navigate(['add'], {relativeTo: this.route.parent}).then( () => {
+            //     localStorage.removeItem('apartId');
+            // });
           }
         }
       };
